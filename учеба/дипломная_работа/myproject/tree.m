@@ -1,10 +1,10 @@
 function reor_coef = tree(coef, depth)
 
-heigth = size(coef,1);
-reor_coef = zeros(1, heigth * heigth);
+height = size(coef,1);
+reor_coef = zeros(1, height * height);
 n = 1;
 
-root_heigth = heigth/2^depth; % размер самого маленького квадрата
+root_heigth = height/2^depth; % размер самого маленького квадрата
 
 if (root_heigth<1) 
     error('Недопустимое значение глубины дерева');

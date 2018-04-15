@@ -1,5 +1,9 @@
 function reord_coef = zigzag_field(coef)
 
+if (size(coef,1) ~= 8)
+    error('Поддерживает только блоки 8х8');
+end
+
 [maxh, maxv] = size(coef);
 reord_coef = zeros(1, maxh*maxv);
 v = 1;
@@ -10,7 +14,6 @@ reord_coef(1:n) = coef(1:h, v);
 n = n + 1;
 h = 1;
 v = v + 1;
-%reord_coef(n) = coef(h,v);
 
 while (n < 53)
 
@@ -56,12 +59,6 @@ while (n < 53)
 end
 
 reord_coef(n:n+maxh/2 - 1) = coef(h:h+maxh/2-1,v);
-
-
-n = n + maxh/2
-v = v - 1
-h = h + maxh/2
-
 reord_coef(n:n+maxh/2 - 1) = coef(h:h+maxh/2-1,v);
 
 n = n + maxh/2;
