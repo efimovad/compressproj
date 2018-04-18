@@ -2,6 +2,7 @@ function reor_coef = tree(coef, depth)
 
 height = size(coef,1);
 reor_coef = zeros(1, height * height);
+%reor_coef = [];
 n = 1;
 
 root_heigth = height/2^depth; % размер самого маленького квадрата
@@ -60,3 +61,5 @@ for i = 1:root_heigth
         end
     end
 end
+
+
